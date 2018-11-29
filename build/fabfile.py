@@ -117,6 +117,7 @@ def _deploy_git_factory():
 
       #fab.execute(css)
       for filename in (
+        'nova',
         'vendor',
       ):
         if os.path.exists(os.path.join(self.repo.working_tree_dir, filename)):
