@@ -58,12 +58,12 @@ def production():
 @fab.task
 def staging():
   fab.env.git = _deploy_git_factory()(
-    remote_repository_path='/home/www/p485630/html/jc',  # get this ready
+    remote_repository_path='/home/www/p461591/html/staging.janchristlieb.de',  # get this ready
     release_branch='staging',
   )
 
   _deploy_base_env()
-  fab.env.hosts = ['escaperoom-dillingen']
+  fab.env.hosts = ['jan.mittwald']
 
 
 @fab.task
@@ -88,5 +88,3 @@ def deploy(*args):
 
   fab.execute(deploy_push_files)
   fab.execute(deploy_apply_files)
-
-
